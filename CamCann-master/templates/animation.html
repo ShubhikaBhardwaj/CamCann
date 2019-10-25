@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>DC</title>
+    <link href="https://fonts.googleapis.com/css?family=Montserrat&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="Style.css">
+  </head>
+  <body>
+    <div class="hero">
+      <div class="svgAnimation">
+
+      <img src="logo-inout-white.svg" id="Layer_1" alt="" style="height:20%;width:20%;">
+
+      <div class="movingBg">
+        <div class="pacman">
+
+        </div>
+
+        <div class="apples">
+          <img src="apple.svg" alt="" class="apple">
+          <img src="apple.svg" alt="" class="apple">
+
+          <img src="apple.svg" alt="" class="apple">
+
+          <img src="apple2.svg" alt="" class="apple">
+
+          <img src="apple.svg" alt="" class="apple">
+
+          <img src="apple.svg" alt="" class="apple">
+
+        </div>
+
+      </div>
+
+      </div>
+
+      <div class="knowMore">
+        <!-- <h1 class="heading">Hey Did you see that?</h1> -->
+        <h3 class="subHeading"></h3>
+      </div>
+
+
+    </div>
+
+  <script src="anime.min.js" charset="utf-8"></script>
+  <script src="style.js" charset="utf-8"></script>
+  <script src="typeit.min.js"></script>
+
+  <script>
+    new TypeIt('.subHeading', {
+strings: ["Hey, Did you see that?", "Just Play a simple game and win a coupon"],
+speed: 90,
+breakLines: false,
+waitUntilVisible: true,
+loop: true
+}).go();
+
+setTimeout(()=>{
+  window.location.href = "useHand.html";
+},9000);
+</script>
+
+  </body>
+</html>

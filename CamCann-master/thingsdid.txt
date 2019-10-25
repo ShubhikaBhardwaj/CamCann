@@ -1,0 +1,33 @@
+deleted from css
+
+        /* Chrome, Safari and Opera syntax */
+        :-webkit-full-screen {
+          /*background-image: url('static/css/home.jpg');
+          background-size: cover;
+          background-repeat: no-repeat;*/
+
+        }
+
+        /* Firefox syntax */
+        :-moz-full-screen {
+          background-image: url('static/css/home.jpg');
+          background-size: cover;
+          background-repeat: no-repeat;
+        }
+
+        /* IE/Edge syntax */
+        :-ms-fullscreen {
+          background-image: url('static/css/home.jpg');
+          background-size: cover;
+          background-repeat: no-repeat;
+        }
+
+        /* Standard syntax */
+        :fullscreen {
+          /*background-image: url('static/css/home.jpg');
+          background-size: cover;
+          background-repeat: no-repeat;*/
+        }
+        /* Style the button *
+
+        

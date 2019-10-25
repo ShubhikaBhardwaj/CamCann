@@ -1,0 +1,45 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  html{
+    font-size: 62.5%;
+  }
+  
+  body{
+    font-family: 'Montserrat', sans-serif;
+    overflow-x: hidden;
+    overflow-y: hidden;
+  }
+  
+  .hero{
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    background-color: #6610f2;
+    flex-direction: column;
+  }
+
+  .svgAnimation{
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+  }
+
+  
+  #Layer_1{
+    height: 37vh;
+    width:45vw;
+  }
+
+  @keyframes slideFromBottom {
+    100%{
+      opacity: 1;
+      margin-top: 0;
+    }
+  }

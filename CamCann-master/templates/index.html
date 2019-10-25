@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat&display=swap" rel="stylesheet">
+    <style>
+        body{
+          font-family: 'Montserrat', sans-serif;
+          /* background-image: url('home.jpg'); */
+          background-color: #6610f2;
+          background-size: cover;
+          background-repeat: no-repeat;
+        }
+
+        video, canvas {
+    margin-left: 230px;
+    margin-top: 120px;
+    position: absolute;
+  }
+
+  .demo-container{
+      opacity: 0;
+  }
+
+  .desk{
+    position: absolute;
+    top: 14%;
+    left: 31%;
+  }
+
+  .desksvg{
+    height: 45vh;
+    width: 35vw;
+  }
+
+  .text{
+    font-size: 3.5rem;
+  font-weight: 600;
+  color: #fff;
+  text-transform: uppercase;
+  position: absolute;
+  top: 60%;
+  left: 18%;
+  }
+
+
+
+        @keyframes animateOne
+        {
+            0%
+            {
+                background-position: 0px 0px
+            }
+
+            100%
+            {
+                background-position: 100px 650px
+            } 
+        }
+
+
+        @keyframes animateSecond
+        {
+            0%
+            {
+                background-position: 0px -100px
+            }
+
+            100%
+            {
+                background-position: 0px 650px
+            }
+        }
+    </style>
+</head>
+<body onload="openFullscreen()">
+
+
+        
+        
+          <div class="demo-frame">
+              <div class="desk"><img src="desk.svg" alt="" class="desksvg"></div>
+              <p class="text"></p>
+            <div class="demo-container">
+              <video id="video" width="320" height="240" preload autoplay loop muted></video>
+              <canvas id="canvas" width="320" height="240"></canvas>
+            </div>
+          </div>
+
+
+
+        <script src="tracking-min.js"></script>
+        <script src="face-min.js"></script>
+         <script src="dat.gui.min.js"></script>
+     
+        <script src="typeit.min.js"></script>
+        <div class="demo-title">
+        
+          <script>
+              new TypeIt('.text', {
+                strings: ["Hungary?", "Step closer to find out!"],
+                speed: 100,
+                breakLines: false,
+                waitUntilVisible: true,
+                loop: true
+              }).go();
+
+              var elem = document.documentElement;
+                function openFullscreen() {
+                if (elem.requestFullscreen) {
+                elem.requestFullscreen();
+                } 
+                // else if (elem.mozRequestFullScreen) {  Firefox 
+                // elem.mozRequestFullScreen();
+                // } 
+                else if (elem.webkitRequestFullscreen) { /* Chrome, Safari & Opera */
+                elem.webkitRequestFullscreen();
+                }
+                //  else if (elem.msRequestFullscreen) {  IE/Edge 
+                // elem.msRequestFullscreen();
+                // }
+                }
+
+                function closeFullscreen() {
+                if (document.exitFullscreen) {
+                document.exitFullscreen();
+                } else if (document.mozCancelFullScreen) {
+                document.mozCancelFullScreen();
+                } else if (document.webkitExitFullscreen) {
+                document.webkitExitFullscreen();
+                } else if (document.msExitFullscreen) {
+                document.msExitFullscreen();
+                }
+                }
+            window.onload = function() {
+              var video = document.getElementById('video');
+              var canvas = document.getElementById('canvas');
+              var context = canvas.getContext('2d');
+              var tracker = new tracking.ObjectTracker('face');
+              tracker.setInitialScale(4);
+              tracker.setStepSize(2);
+              tracker.setEdgesDensity(0.1);
+              tracking.track('#video', tracker, { camera: true });
+              tracker.on('track', function(event) {
+                // context.clearRect(0, 0, canvas.width, canvas.height);
+                event.data.forEach(function(rect) {
+                    //console.log("detected");
+                    window.location.href = "animation.html";
+                
+                //   context.strokeStyle = '#a64ceb';
+                //   context.strokeRect(rect.x, rect.y, rect.width, rect.height);
+                //   context.font = '11px Helvetica';
+                //   context.fillStyle = "#fff";
+                //   context.fillText('x: ' + rect.x + 'px', rect.x + rect.width + 5, rect.y + 11);
+                //   context.fillText('y: ' + rect.y + 'px', rect.x + rect.width + 5, rect.y + 22);
+                });
+              });
+
+            //   var gui = new dat.GUI();
+            //   gui.add(tracker, 'edgesDensity', 0.1, 0.5).step(0.01);
+            //   gui.add(tracker, 'initialScale', 1.0, 10.0).step(0.1);
+            //   gui.add(tracker, 'stepSize', 1, 5).step(0.1);
+            };
+
+
+          </script>
+</body>
+</html>
+

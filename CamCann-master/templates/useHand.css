@@ -1,0 +1,139 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  html{
+    font-size: 62.5%;
+  }
+  
+  body{
+    font-family: 'Montserrat', sans-serif;
+    overflow-x: hidden;
+    overflow-y: hidden;
+  }
+  
+  .hero{
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    background-color: #6610f2;
+    flex-direction: column;
+  }
+
+  .svgAnimation{
+    height: 70vh;
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+  }
+
+  .knowMore{
+    height: 30vh;
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    animation: slideFromBottom 0.7s forwards 0.2s;
+    opacity: 0;
+    margin-top: 7rem;
+  }
+  
+  .subHeading{
+    font-size: 3.1rem;
+    font-weight: 600;
+    color: #fff;
+    padding-top: 3rem;
+  }
+  
+  #Layer_1{
+    height: 37vh;
+    width:45vw;
+  }
+
+  @keyframes slideFromBottom {
+    100%{
+      opacity: 1;
+      margin-top: 0;
+    }
+  }
+
+  img {
+
+
+ 
+    padding: 20px;
+  
+  -webkit-transform: rotate(-40deg);
+  -moz-transform: rotate(-40deg);
+  -o-transform: rotate(-40deg);
+  -ms-transform: rotate(-40deg);
+  transform: rotate(-40deg);
+  -webkit-animation: wink 0.5s alternate infinite; /* Safari 4+ */
+    -moz-animation:    wink 0.5s alternate infinite; /* Fx 5+ */
+    -o-animation:      wink 0.5s alternate infinite; /* Opera 12+ */
+    animation:         wink 0.5s alternate infinite; /* IE 10+, Fx 29+ */
+  -webkit-transform-origin: 50% 100%;
+  -moz-transform-origin: 50% 100%;
+  -o-transform-origin: 50% 100%;
+  -ms-transform-origin: 50% 100%;
+  transform-origin: 50% 100%;
+  -webkit-animation-timing-function: ease; /* Chrome, Safari, Opera */
+  animation-timing-function: ease;
+  
+  
+  
+        
+  
+  }
+  
+  
+  
+  
+  /* Chrome, Safari, Opera */ 
+  @-webkit-keyframes wink {
+      0% {-webkit-transform: rotate(-40deg);
+  -moz-transform: rotate(-40deg);
+  -o-transform: rotate(-40deg);
+  -ms-transform: rotate(-40deg);
+  
+  }
+  
+  
+  
+  100% {-webkit-transform: rotate(40deg);
+  -moz-transform: rotate(40deg);
+  -o-transform: rotate(40deg);
+  -ms-transform: rotate(40deg);
+  transform: rotate(40deg);}
+  
+  
+  
+  
+  } 
+  
+  /* Standard syntax */ 
+  @keyframes wink {
+      
+  
+      0% {-webkit-transform: rotate(-40deg);
+  -moz-transform: rotate(-40deg);
+  -o-transform: rotate(-40deg);
+  -ms-transform: rotate(-40deg);
+  transform: rotate(-40deg);
+  }
+  
+  
+  100% {-webkit-transform: rotate(40deg);
+  -moz-transform: rotate(40deg);
+  -o-transform: rotate(40deg);
+  -ms-transform: rotate(40deg);
+  transform: rotate(40deg);}
+  
+  
+  
+  }

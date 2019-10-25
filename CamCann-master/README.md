@@ -1,0 +1,1 @@
+Initial Commit for full-screen view and screen effect
